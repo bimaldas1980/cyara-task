@@ -1,0 +1,13 @@
+.mat-dialog-content {
+    height: 200px;
+    p {
+        text-align: center;
+    }
+    p.new-token {
+        font-size: 16px;;
+        font-weight: bold;
+    }
+    .mat-dialog-actions {
+        float: right;
+    }
+}

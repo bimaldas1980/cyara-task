@@ -1,0 +1,21 @@
+
+
+<form [formGroup]="loginForm" (ngSubmit)="loginForm.valid && login()">
+    <mat-card>
+        <mat-card-content>
+            <mat-error *ngIf="!!loginError">Invalid username or password.</mat-error>
+            <mat-form-field>
+                <input matInput placeholder="Username" formControlName="username" required autofocus />
+                <mat-error>This is required.</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Password" formControlName="password" type="password" required />
+                <mat-error>This is required.</mat-error>
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">Login</button>
+        </mat-card-actions>
+    </mat-card>
+</form>
+

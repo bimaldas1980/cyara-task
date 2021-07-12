@@ -1,0 +1,28 @@
+.mat-card {
+    min-width: 200px;
+    max-width: 500px;
+    width: 100%;
+    margin: 50px auto;
+    z-index: 5000;
+    padding: 24px;
+    mat-card-content {
+        padding: 0px;
+        .login-error {
+            color: red;
+        }
+        .mat-form-field {
+            display: block;
+            font-size: 1.1em;
+        }
+    }
+    .mat-card-actions {
+        text-align: right;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 8px 0px 10px 0px;
+    }
+    .mat-card>.mat-card-actions:last-child {
+        margin-bottom: 0px;
+        padding-bottom: 8px;
+    }
+}

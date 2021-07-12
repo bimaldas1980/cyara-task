@@ -1,0 +1,55 @@
+<div class="search-filter sticky">
+    <input type="text" [(ngModel)]="searchFilter" placeholder="Search" (ngModelChange)="filterTokens()" />
+    <button class="generate-token-button" mat-raised-button color="primary" (click)="generateToken()">Generate Token</button>
+</div>
+<div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource" (scroll)="onTableScroll($event)">
+  
+      <ng-container matColumnDef="token">
+        <mat-header-cell *matHeaderCellDef> token </mat-header-cell>
+        <mat-cell [ngClass]="{ 'ended-token': element.isEnded }" *matCellDef="let element"> {{element.token}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="startDate">
+        <mat-header-cell *matHeaderCellDef> Start Date </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.startDate | tmDate}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="endDate">
+        <mat-header-cell *matHeaderCellDef> End Date </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.endDate | tmDate}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="createdBy">
+        <mat-header-cell *matHeaderCellDef> Created By </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.createdBy}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="createdAt">
+        <mat-header-cell *matHeaderCellDef> Created At </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.createdAt | tmDate}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="modifiedAt">
+        <mat-header-cell *matHeaderCellDef> Modified At </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.modifiedAt | tmDate}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="modifiedBy">
+        <mat-header-cell *matHeaderCellDef> Modified By </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.modifiedBy}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+            <mat-icon *ngIf="!!element.isDisabled">not_interested</mat-icon>
+               <button  mat-raised-button color="secondary" *ngIf="!element.isDisabled" (click)="disable(element.id, element.token)">Disable</button>
+        </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+  

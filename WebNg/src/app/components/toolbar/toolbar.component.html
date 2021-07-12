@@ -1,0 +1,9 @@
+<mat-toolbar color="primary">
+    <span>ACME Corp API Tokens</span>
+    <span class="example-spacer"></span>
+    <span *ngIf="!!isAuthenticated()" class="logged-in-user">{{ loggedInUsername() }}</span>
+    <button *ngIf="!!isAuthenticated()" mat-icon-button class="example-icon" (click)="logout()" aria-label="Example icon-button with share icon">
+        <mat-icon>power_settings_new</mat-icon>
+    </button>
+    
+  </mat-toolbar>
