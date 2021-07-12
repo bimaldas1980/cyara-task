@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.90" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TM.Configuration\TM.Configuration.csproj" />
+    <ProjectReference Include="..\TM.Data.Interface\TM.Data.Interface.csproj" />
+    <ProjectReference Include="..\TM.Data\TM.Data.csproj" />
+    <ProjectReference Include="..\TM.Models\TM.Models.csproj" />
+  </ItemGroup>
+
+</Project>
